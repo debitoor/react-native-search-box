@@ -255,7 +255,6 @@ class Search extends PureComponent {
     return (
       <Animated.View
         ref="searchContainer"
-        testID={textInputTestID}
         style={[
           styles.container,
           this.props.backgroundColor && {
@@ -266,6 +265,7 @@ class Search extends PureComponent {
       >
         <AnimatedTextInput
           ref="input_keyword"
+          testID={textInputTestID}
           style={[
             styles.input,
             this.props.placeholderTextColor && {
