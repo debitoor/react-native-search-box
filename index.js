@@ -251,9 +251,11 @@ class Search extends PureComponent {
 
   render() {
     const styles = getStyles(this.props.inputHeight);
+    const { textInputTestID } = this.props;
     return (
       <Animated.View
         ref="searchContainer"
+        testID={textInputTestID}
         style={[
           styles.container,
           this.props.backgroundColor && {
