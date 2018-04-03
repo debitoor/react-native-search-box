@@ -10,11 +10,13 @@ import {
   Keyboard,
   Image,
   View,
-  ViewPropTypes
+  ViewPropTypes,
+  Platform
 } from 'react-native';
 
 const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
 const containerHeight = 40;
+const testId = value => (Platform.OS === 'ios' ? {testID: value} : {accessibilityLabel: value});
 
 class Search extends PureComponent {
   constructor(props) {
@@ -265,7 +267,7 @@ class Search extends PureComponent {
       >
         <AnimatedTextInput
           ref="input_keyword"
-          testID={textInputTestID}
+          {...testId(textInputTestID)}
           style={[
             styles.input,
             this.props.placeholderTextColor && {
